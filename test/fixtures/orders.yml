@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: "Test"
+  last_name: "User"
+  middle_name: "M"
+  phone: "89998887766"
+  email: "test@example.com"
+  weight: 10
+  length: 100
+  width: 50
+  height: 50
+  from: "Kazan"
+  to: "Moscow"
+  status: "new"
+  user: one

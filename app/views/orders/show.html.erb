@@ -1,0 +1,54 @@
+<div class="container" style="max-width: 500px; margin-top: 40px;">
+  <div class="card shadow-sm">
+    <div class="card-body ps-3">
+      <h3 class="card-title mb-4 text-center">Информация по заявке</h3>
+      <table class="table table-sm mb-0">
+        <tbody>
+          <tr>
+            <th>Имя</th>
+            <td><%= @order.first_name %></td>
+          </tr>
+          <tr>
+            <th>Фамилия</th>
+            <td><%= @order.last_name %></td>
+          </tr>
+          <tr>
+            <th>Телефон</th>
+            <td><%= @order.phone %></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><%= @order.email %></td>
+          </tr>
+          <tr>
+            <th>Груз (кг)</th>
+            <td><%= @order.weight %></td>
+          </tr>
+          <tr>
+            <th>Габариты (см)</th>
+            <td><%= @order.length %> x <%= @order.width %> x <%= @order.height %></td>
+          </tr>
+          <tr>
+            <th>Из</th>
+            <td><%= @order.from %></td>
+          </tr>
+          <tr>
+            <th>В</th>
+            <td><%= @order.to %></td>
+          </tr>
+          <tr>
+            <th>Расстояние (км)</th>
+            <td><%= @order.distance %></td>
+          </tr>
+          <tr>
+            <th>Стоимость (руб)</th>
+            <td><%= @order.price %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="mt-4 text-center">
+        <%= link_to "Назад к заказам", orders_path, class: "btn btn-outline-secondary btn-sm" %>
+      </div>
+    </div>
+  </div>
+</div>

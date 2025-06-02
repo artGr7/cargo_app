@@ -1,0 +1,71 @@
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading"><%= pluralize(order.errors.count, "ошибка") %> не позволили сохранить заказ:</h4>
+      <ul class="mb-0">
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :first_name, class: "form-label" %>
+    <%= form.text_field :first_name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :last_name, class: "form-label" %>
+    <%= form.text_field :last_name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :middle_name, class: "form-label" %>
+    <%= form.text_field :middle_name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :phone, class: "form-label" %>
+    <%= form.text_field :phone, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :email, class: "form-label" %>
+    <%= form.text_field :email, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :weight, class: "form-label" %>
+    <%= form.text_field :weight, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :length, class: "form-label" %>
+    <%= form.text_field :length, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :width, class: "form-label" %>
+    <%= form.text_field :width, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :height, class: "form-label" %>
+    <%= form.text_field :height, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :from, class: "form-label" %>
+    <%= form.text_field :from, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :to, class: "form-label" %>
+    <%= form.text_field :to, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Сохранить", class: "btn btn-success w-100" %>
+  </div>
+<% end %>

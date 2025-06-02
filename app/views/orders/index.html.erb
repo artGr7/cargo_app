@@ -1,0 +1,35 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Orders" %>
+
+<div class="mb-4 ms-3">
+  <%= link_to "На главную", root_path, class: "btn btn-outline-primary btn-sm" %>
+  <h1>Мои заказы</h1>
+</div>
+
+<div class="ms-3 mb-3">
+  <strong>Сортировать:</strong>
+  <%= link_to "Дата ↓", orders_path(sort: "created_at_desc"), class: "btn btn-link btn-sm px-1" %>
+  <%= link_to "Дата ↑", orders_path(sort: "created_at_asc"), class: "btn btn-link btn-sm px-1" %>
+  <%= link_to "Цена ↓", orders_path(sort: "price_desc"), class: "btn btn-link btn-sm px-1" %>
+  <%= link_to "Цена ↑", orders_path(sort: "price_asc"), class: "btn btn-link btn-sm px-1" %>
+  <%= link_to "Расстояние ↓", orders_path(sort: "distance_desc"), class: "btn btn-link btn-sm px-1" %>
+  <%= link_to "Расстояние ↑", orders_path(sort: "distance_asc"), class: "btn btn-link btn-sm px-1" %>
+</div>
+
+<div class="row ms-1">
+  <% @orders.each do |order| %>
+    <div class="col-md-4 mb-4">
+      <%= render order %>
+      <div class="mb-3 ms-3">
+        <%= link_to "Подробнее", order, class: "btn btn-outline-primary btn-sm" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= paginate @orders %>
+
+<div class="mt-2 ms-3">
+  <%= link_to "New order", new_order_path, class: "btn btn-outline-primary btn-sm" %>
+</div>

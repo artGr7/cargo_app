@@ -1,0 +1,15 @@
+<% content_for :title, "Новый заказ" %>
+
+<div class="container" style="max-width: 400px; margin-top: 60px;">
+  <div class="card shadow-sm">
+    <div class="card-body p-4">
+      <h2 class="mb-4 text-center">Новый заказ</h2>
+
+      <%= render "form", order: @order %>
+
+      <div class="mt-3 text-center">
+        <%= link_to "Назад к заказам", orders_path, class: "btn btn-outline-secondary btn-sm" %>
+      </div>
+    </div>
+  </div>
+</div>

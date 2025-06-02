@@ -1,0 +1,63 @@
+<div class="mb-4" style="margin-top: 20px;">
+  <div id="<%= dom_id order %>" class="card shadow-sm" style="max-width: 500px; width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title mb-3 text-center">Информация о заказе</h5>
+      <table class="table table-sm mb-0 text-center">
+        <tbody>
+          <tr>
+            <th>Имя</th>
+            <td><%= order.first_name %></td>
+          </tr>
+          <tr>
+            <th>Фамилия</th>
+            <td><%= order.last_name %></td>
+          </tr>
+          <tr>
+            <th>Отчество</th>
+            <td><%= order.middle_name %></td>
+          </tr>
+          <tr>
+            <th>Телефон</th>
+            <td><%= order.phone %></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><%= order.email %></td>
+          </tr>
+          <tr>
+            <th>Вес</th>
+            <td><%= order.weight %></td>
+          </tr>
+          <tr>
+            <th>Длина</th>
+            <td><%= order.length %></td>
+          </tr>
+          <tr>
+            <th>Ширина</th>
+            <td><%= order.width %></td>
+          </tr>
+          <tr>
+            <th>Высота</th>
+            <td><%= order.height %></td>
+          </tr>
+          <tr>
+            <th>Откуда</th>
+            <td><%= order.from %></td>
+          </tr>
+          <tr>
+            <th>Куда</th>
+            <td><%= order.to %></td>
+          </tr>
+          <tr>
+            <th>Дистанция</th>
+            <td><%= order.distance %></td>
+          </tr>
+          <tr>
+            <th>Цена</th>
+            <td><%= order.price %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
