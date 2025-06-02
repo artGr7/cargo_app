@@ -1,24 +1,59 @@
-# README
+# CargoApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CargoApp — это небольшое веб-приложение для оформления, расчёта и отслеживания заявок на грузоперевозки.
 
-Things you may want to cover:
+## Возможности
 
-* Ruby version
+- Регистрация и аутентификация пользователей (Devise)
+- Создание, просмотр, сортировка и фильтрация заявок на перевозку
+- Автоматический расчёт стоимости и расстояния (CargoCalculator)
+- Email-уведомления о создании и смене статуса заявки (через Sidekiq и ActiveJob)
+- Админ-панель (ActiveAdmin)
+- Фоновые задачи (Sidekiq)
+- Загрузка файлов (CarrierWave)
 
-* System dependencies
+## Требования
 
-* Configuration
+- Ruby 3.2+
+- Rails 8.x
+- PostgreSQL
+- Redis (для фоновых задач)
+- Node.js и Yarn (для фронтенда)
+- Sidekiq (фоновые задачи)
 
-* Database creation
+## Установка и запуск
 
-* Database initialization
+1. Клонируйте репозиторий:
+   sh
+   git clone https://github.com/your-username/cargo_app.git
+   cd cargo_app
 
-* How to run the test suite
+2. Установите зависимости:
 
-* Services (job queues, cache servers, search engines, etc.)
+    bundle install
+    yarn install
 
-* Deployment instructions
+3. Настройте переменные окружения:
 
-* ...
+    Добавьте переменные DISTANCE_API_KEY и CARGO_APP_DATABASE_PASSWORD в .env
+
+4. Создайте и заполните базу данных:
+
+    rails db:create db:migrate db:seed
+
+5. Запустите Redis
+
+    redis-server
+
+6. Запустите Sidekiq:
+
+    bundle exec sidekiq
+
+7. Запустите сервер:
+
+    rails server
+
+## Тестирование
+    Для запуска тестов:
+    rails test
+
